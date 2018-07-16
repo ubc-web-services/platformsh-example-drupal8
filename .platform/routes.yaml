@@ -10,7 +10,13 @@
       enabled: true
 
       # Base the cache on the session cookie. Ignore all other cookies.
-      cookies: ['/^SS?ESS/']
+      cookies: ['/^SS?ESS/', '/^SimpleSAML/', '__blackfire']
+    tls:
+      min_version: TLSv1.2
+      strict_transport_security:
+        enabled: true
+        include_subdomains: false
+        # preload: true
 
 "https://www.{default}/":
     type: redirect
